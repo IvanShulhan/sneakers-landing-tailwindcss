@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "name": "Air force",
+    "description": "Air force ipsum dolor sit amet consectetur, adipisicing elit. Numquam saepe ea laboriosam non necessitatibus ipsam.",
+    "price": "$119",
+    "sizes": ["41", "42", "43", "44"],
+    "images": [
+      {
+        "id": 1,
+        "title": "black",
+        "src": "./src/images/air.png"
+      },
+      {
+        "id": 2,
+        "title": "blue",
+        "src": "./src/images/air2.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jordan",
+    "description": "Nike Jordan adipisicing elit. Numquam saepe ea laboriosam non necessitatibus ipsam. Pot ipsum dolor sit amet consectetur!",
+    "price": "$139",
+    "sizes": ["41", "43", "44"],
+    "images": [
+      {
+        "id": 1,
+        "title": "white",
+        "src": "./src/images/jordan.png"
+      },
+      {
+        "id": 2,
+        "title": "green",
+        "src": "./src/images/jordan2.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Blazer",
+    "description": "Nike Blazer adipisicing saepe ea laboriosam. Consectetur non eveniet commodi laboriosam architecto. Deleniti magni distinctio omnis voluptatum enim architecto nulla fugiat unde delectus id! ",
+    "price": "$109",
+    "sizes": ["41", "42", "43"],
+    "images": [
+      {
+        "id": 1,
+        "title": "white",
+        "src": "./src/images/blazer.png"
+      },
+      {
+        "id": 2,
+        "title": "green",
+        "src": "./src/images/blazer2.png"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Crater",
+    "description": "Nike crater commodi laboriosam architecto. Deleniti magni distinctio omnis voluptatum enim architecto nulla fugiat unde delectus id! ",
+    "price": "$99",
+    "sizes": ["41", "42", "43", "44"],
+    "images": [
+      {
+        "id": 1,
+        "title": "black",
+        "src": "./src/images/crater.png"
+      },
+      {
+        "id": 2,
+        "title": "white",
+        "src": "./src/images/crater2.png"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hippie",
+    "description": "Consequuntur quis Hippie commodi. oluta accusamus, doloribus alias eos dolores dignissimos. Repellat ea iste adipisci porro magni reprehenderit pariatur praesentium necessitatibus inventore.",
+    "price": "$99",
+    "sizes": ["40", "41", "42", "44"],
+    "images": [
+      {
+        "id": 1,
+        "title": "lightgray",
+        "src": "./src/images/hippie.png"
+      },
+      {
+        "id": 2,
+        "title": "gray",
+        "src": "./src/images/hippie2.png"
+      }
+    ]
+  }
+]

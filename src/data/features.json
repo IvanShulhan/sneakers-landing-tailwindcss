@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "./src/images/shipping.png",
+    "title": "Free shipping",
+    "text": "Free worldwide shipping on all orders."
+  },
+  {
+    "id": 2,
+    "image": "./src/images/return.png",
+    "title": "30 days return",
+    "text": "No question return and easy refund in 14 days."
+  },
+  {
+    "id": 3,
+    "image": "./src/images/gift.png",
+    "title": "Gift cards",
+    "text": "By gift cards and use coupon codes easily."
+  },
+  {
+    "id": 4,
+    "image": "./src/images/contact.png",
+    "title": "Contact us!",
+    "text": "keep in touch via email and support system."
+  }
+]

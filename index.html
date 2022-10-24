@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>.sneakers</title>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+  <link rel="shortcut icon" href="./src/images/nike-logo.svg">
+</head>
+<body class="font-Lato max-w-[100vw] overflow-x-hidden">
+  <header>
+    <nav class="text-white py-3 px-1 sm:py-4 sm:px-8 md:py-5 md:px-12 bg-black ">
+      <div class="flex items-center justify-between mb-10 px-2 md:px-0 container">
+        <div class="nav-item">
+          <a href="/" class="text-[0] w-36 h-5 bg-contain bg-no-repeat bg-logo flex items-center">Logo</a>
+        </div>
+        <div class="nav-item">
+          <div class="hidden md:flex items-center py-2.5 px-4 bg-gray-600">
+            <input type="text" class="text-inherit border-none outline-none bg-transparent placeholder:text-gray-400" placeholder="Search...">
+            <span class="cursor-pointer w-5 h-5 text-[0] bg-search bg-contain">Search</span>
+          </div>
+        </div>
+        <div class="nav-item">
+          <span class="cursor-pointer text-green text-lg underline decoration-2 decoration-green-700">
+            Limited offer
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <ul class="list-none px-4 flex flex-wrap items-center gap-5 sm:gap-8 md:gap-12" id="nav-list"></ul>
+      </div>
+    </nav>
+  </header>
+  <main class="w-[100%] overflow-x-hidden flex flex-col">
+    <div 
+      id="successMessage"
+      class="fixed text-white border-b-4 border-green-900 font-semibold w-[100vw] top-0 bmd:w-auto bmd:top-5 bmd:right-10  p-7 bg-[#000000ee] z-[3] shadow-2xl hidden"
+    >
+      <h3 class="text-xl leading-10">
+        Your order has been accepted!<br/>Please wait for a call to clarify the details.</h3>
+    </div>
+    <button 
+      id="upButton"
+      class="w-14 h-14 fixed bottom-0 right-0 md:bottom-4 md:right-4 flex items-center justify-center bg-[#000000ac] z-[2]"
+      >
+        <span class="w-6 h-6 bg-arrow-up transition-transform hover:-translate-y-[2px] text-[0]">To top</span>
+    </button>
+    <div class="wall bg-break-wall bg-cover h-[80vh] max-h-[1000px] mb-10 relative z-[2] overflow-hidden">
+      <div class="w-[500vw] h-[100%] flex transition-all duration-1000" id="slider"></div>
+    </div>
+    <div class="flex gap-y-4 flex-wrap justify-between mb-14 container" id="features"></div>
+    <div id="product" class="container flex items-center justify-between mb-16">
+      <div class="flex flex-col sm:flex-row items-center w-[100%] sm:gap-6 justify-between px-3 md:px-0">
+        <img class="w-[100%] lph:w-[75%] sm:w-1/2 h-auto object-cover object-center" src="./src/images/air.png" id="productImage">
+        <div class="w-[100%] sm:w-1/2 md:w-1/3 flex flex-col gap-4 sm:gap-5">
+          <h2 class="text-6xl font-black" id="productTitle">Product name</h2>
+          <h4 class="text-2xl font-semibold" id="productPrice">Product price</h4>
+          <p class="text-gray-500" id="productDescription">Product descriptoon</p>
+          <div class="flex gap-2" id="productColors">Colors</div>
+          <div class="flex gap-2" id="productSizes">Sizes</div>
+          <button 
+            type="button" 
+            class="self-end uppercase text-white min-w-max w-3/4 lph:min-w-[200px] lph:w-max py-2 px-6 border-2 bg-black border-black transition-colors duration-300 hover:bg-white hover:text-black mt-4" 
+            id="productButton"
+          >
+            Buy now
+          </button>
+      </div>
+    </div>
+    </div>
+    <div 
+      id="paymentBlock" 
+      class="payment hidden items-center justify-center w-[100vw] h-[100vh] fixed top-0 left-0 bg-[#000000ac] z-[2] mb-10"
+    >
+      <form
+        id="paymentForm" 
+        action="/" 
+        method="post"
+        class="flex flex-col min-h-[100vh] bmd:min-w-[400px] bmd:min-h-min bmd:w-1/2 max-w-xl bg-white relative z-[3]"
+      >
+        <button 
+          id="formCancel"
+          type="button"
+          class="w-6 h-6 absolute right-4 top-4 border-2 border-gray-400 flex items-center justify-center"
+        >
+          <span 
+            class="text-[0] bg-cancel w-3 h-3 inline-block transition-transform hover:rotate-90 duration-300"
+          >
+            Cancel
+          </span>
+        </button>
+        <div class="pt-7 pb-10 px-10 flex flex-col gap-5 flex-grow">
+          <h3 class="form-title">Personal Information</h3>
+          <label class="form-label">
+            <h4 class="form-label-title">Name and Surname</h4>
+            <input 
+              type="text" 
+              class="input form-input" 
+              placeholder="John Dou" 
+              required
+              min="3"
+            >
+          </label>
+          <label class="form-label">
+            <h4 class="form-label-title">Phone number</h4>
+            <input 
+              type="text" 
+              class="input form-input" 
+              placeholder="+38 000 000 00 00" 
+              pattern="[+38][0-9]{12}" 
+              required
+            >
+          </label>
+          <label class="form-label">
+            <h4 class="form-label-title">Address</h4>
+            <input 
+              type="text"
+              class="input form-input" 
+              placeholder="Shevchenka St 49 80080"
+            >
+          </label>
+          <h3 class="form-title">Card Information</h3>
+          <div class="flex items-center gap-5 -mb-4">
+            <img class="w-14 h-auto" src="./src/images/master.png" alt="visa">
+            <img class="w-14 h-auto" src="./src/images/visa.png" alt="visa">
+          </div>
+          <input 
+            type="text" 
+            class="input form-input" 
+            placeholder="Card Number"
+            pattern="[0-9]{12}"
+            required
+          >
+          <div class="flex justify-between">
+            <input 
+              type="text" 
+              class="input form-card-input" 
+              placeholder="mm"
+              pattern="[0-9]{2}"
+              required
+            >
+            <input 
+              type="text" 
+              class="input form-card-input" 
+              placeholder="yy"
+              pattern="[0-9]{2}"
+              required
+            >
+            <input 
+              type="text" 
+              class="input form-card-input" 
+              placeholder="cvv"
+              pattern="[0-9]{3}"
+              required
+            >
+          </div>
+        </div>
+        <button 
+          type="submit" 
+          class="bg-green-700 py-3 text-center text-white text-lg font-semibold border-b-4 border-green-700 hover:border-green-900 transition-colors duration-300"
+        >
+          Checkout!
+        </button>
+      </form>
+    </div>
+    <div class="flex gap-y-5 flex-wrap items-start justify-between container mb-20">
+      <div class="card">
+        <h3 class="card-title">Be Yourself</h3>
+        <img 
+          src="./src/images/jordan.webp" 
+          alt="Nike Jordan" 
+          class="card-image"
+        >
+      </div>
+      <div class="sm:flex-col-reverse card">
+        <h3 class="card-title">This is the First Day of Your New Life!</h3>
+        <img 
+          src="./src/images/blazer.webp" 
+          alt="Nike Blazer" 
+          class="card-image"
+        >
+      </div>
+      <div class="card">
+        <h3 class="card-title">Just Do it!</h3>
+        <img 
+          src="./src/images/hippie.webp" 
+          alt="Nike Hippie" 
+          class="card-image"
+        >
+      </div>
+    </div>
+    <div class="container flex flex-col sm:flex-row h-max sm:h-[50vh] md:max-h-[500px] mb-10 md:mb-20">
+      <img 
+        src="./src/images/crater.webp"
+        alt="Nike Crater" 
+        class="w-[100%] sm:w-1/3 h-[100%] object-cover"
+      >
+      <div class="flex items-center justify-center w-[100%] sm:w-1/3 px-2 py-5 bg-black">
+        <button 
+          type="button" 
+          class="px-6 py-3 bg-white transition-colors uppercase font-semibold hover:bg-green-700 hover:text-white duration-300"
+        >
+          Choose your style
+        </button>
+      </div>
+      <img 
+        src="./src/images/air-force.webp" 
+        alt="Nike Crater" 
+        class="w-[100%] sm:w-1/3 h-[100%] object-cover"
+      >
+    </div>
+  </main>
+  <footer class="py-8 px-4 md:px-0 bg-black">
+    <div class="container flex flex-wrap justify-between md:gap-3">
+      <nav class="footer-nav">
+        <h4 class="footer-nav-title">About us</h4>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#company">Company</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="careers">Careers</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#affiliates">Affiliates</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#career">Career</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#stores">Stores</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4 class="footer-nav-title">Useful Links</h4>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#support">Support</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#refund">Refund</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#feedback">Feedback</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#stories">Stories</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4 class="footer-nav-title">Products</h4>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#airForce">Air Force</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#airJordan">Air Jordan</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#blazers">Blazers</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#crater">Crater</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#hippie">Hippie</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="flex flex-col w-[100%] md:mr-5 bmd:w-1/2 md:w-max">
+        <h4 class="footer-nav-title mb-4">
+          Subccribe to our<br/> newsletter
+        </h4>
+        <div class="flex gap-2 mb-7">
+          <form class="flex w-[100%]">
+            <input 
+              class="outline-none border border-gray-200 p-2 bg-transparent text-white"
+              type="email" 
+              placeholder="your@email.com"
+              required
+            >
+            <button class="bg-white border border-white px-2 font-semibold transition-colors duration-300 hover:text-white hover:bg-green-700">
+              Join!
+            </button>
+          </form>
+        </div>
+        <h4 class="footer-nav-title mb-3">Follow Us</h4>
+        <ul class="flex gap-3 mb-5">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img 
+                class="footer-social-link"
+                src="./src/images/facebook.svg" 
+                alt="facebook"
+              >
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com/" target="_blank">
+              <img 
+                class="footer-social-link"
+                src="./src/images/twitter.svg" 
+                alt="twitter"
+              >
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img 
+                class="footer-social-link"
+                src="./src/images/instagram.svg" 
+                alt="instagram"
+              >
+            </a>
+          </li>
+          <li>
+            <a href="https://www.whatsupp.com/" target="_blank">
+              <img 
+                class="footer-social-link"
+                src="./src/images/whatsapp.svg" 
+                alt="whatsapp"
+              >
+            </a>
+          </li>
+        </ul>
+        <h5 class="text-gray-400">@IvanShulhan, 2022</h5>
+      </div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>
